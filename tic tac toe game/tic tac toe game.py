@@ -103,6 +103,7 @@ def dink(x):
   while inpu not in range(1,10) or inpu in x:
    inpu=int(input("enter a number (1-9):"))
    if inpu not in range(1,10) or inpu in x:
+     #print(x)
      print("wrong input")
   return inpu
 #board
@@ -145,18 +146,23 @@ if star:
   x[1]=inpu2
   board=func(inpu2,input2)
   bored()
+  #print(board[2])
   print("player1 your input")
   inpu3=dink(x)
   os.system('cls')
   x[2]=inpu3
   board=func(inpu3,input1)
+  #print(board[2])
   bored()
   print("player2 your input")
   inpu4=dink(x)
   os.system('cls')
   x[3]=inpu4
   board=func(inpu4,input2)
+
   bored()
+  #print(board[2])
+
 i=3
 while i<8:
   print("player1 your input")
@@ -164,6 +170,7 @@ while i<8:
   os.system('cls')
   i+=1
   x[i]=i1
+  board=func(i1,input1)
   if check()=='x':
     board=func(i1,input1)
     bored()
@@ -174,6 +181,7 @@ while i<8:
     print("its a draw!!")
     break
   else:
+
     bored()
   
   print("player2 your input")
