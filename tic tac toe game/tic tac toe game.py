@@ -52,30 +52,32 @@ def func(inpu,player):
 
 #checking winning possibilties
 def check():
- if board[6]==board[7] and board[6]==board[8]:
+ if board[6] !=" " and board[6]==board[7] and board[6]==board[8]:
    v=board[6]
    return v
- elif board[3]==board[4] and board[3]==board[5]:
+ elif board[3] !=" " and board[3]==board[4] and board[4]==board[5]:
    v=board[3]
+   #print(v)
    return v
- elif board[0]==board[1] and board[1]==board[2]:
+ elif board[0] !=" " and board[0]==board[1] and board[1]==board[2]:
    v=board[0]
    return v
- elif board[6]==board[3] and board[3]==board[0]:
+ elif board[6] !=" " and board[6]==board[3] and board[3]==board[0]:
    v=board[6]
    return v
- elif board[4]==board[7] and board[4]==board[1]:
+ elif  board[4] !=" " and board[4]==board[7] and board[4]==board[1]:
    v=board[4]
    return v
- elif board[8]==board[5] and board[5]==board[2]:
+ elif board[8] !=" " and  board[8]==board[5] and board[5]==board[2]:
    v=board[8]
    return v
- elif board[6]==board[4] and board[4]==board[2]:
+ elif board[6] !=" " and board[6]==board[4] and board[4]==board[2]:
    v=board[6]
    return v
- elif board[0]==board[4] and board[4]==board[8]:
+ elif board[0] !=" " and board[0]==board[4] and board[4]==board[8]:
    v=board[0]
    return v
+   
 
 
 def ch(x,inp):
@@ -171,7 +173,8 @@ while i<8:
   i+=1
   x[i]=i1
   board=func(i1,input1)
-  if check()=='x':
+  v=check()
+  if v==input1:
     board=func(i1,input1)
     bored()
     print("congo player1 winner")
@@ -190,7 +193,8 @@ while i<8:
   i+=1
   x[i]=i2
   board=func(i2,input2)
-  if check()=='o':
+  v=check()
+  if v==input2:
     bored()
     print("congo player 2 winner")
     break
